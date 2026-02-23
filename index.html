@@ -1,154 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Jeehyun Piao | Business Analyst & Delivery Lead</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeehyun Piao | Business Analyst & Delivery Lead</title>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
 
-<style>
-:root{
---bg:#0B1220; --surface:#0F1A2E; --text:rgba(255,255,255,.92);
---muted:rgba(255,255,255,.68); --border:rgba(255,255,255,.12);
---accent:#22D3EE; --accent2:#A3E635; --radius:20px; --container:1100px;
-}
-*{box-sizing:border-box}
-html,body{scroll-behavior:smooth}
-body{
-margin:0; font-family:'Inter',system-ui,-apple-system,sans-serif;
-color:var(--text);
-background:
-radial-gradient(900px 500px at 20% 10%, rgba(34,211,238,.15), transparent 55%),
-radial-gradient(900px 500px at 80% 0%, rgba(163,230,53,.12), transparent 55%),
-var(--bg);
-overflow-x:hidden;
-}
-a{color:inherit;text-decoration:none;transition:.3s}
-.container{width:min(var(--container),90vw);margin:0 auto}
+  <style>
+    :root{
+      --bg: #0B1220;
+      --surface: #0F1A2E;
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.68);
+      --border: rgba(255,255,255,0.12);
+      --accent: #22D3EE;      /* cyan */
+      --accent2:#A3E635;      /* lime */
+      --radius: 20px;
+      --container: 1100px;
+    }
 
-/* NAV */
-.nav{position:sticky;top:0;z-index:999;backdrop-filter:blur(12px);
-background:rgba(11,18,32,.6);border-bottom:1px solid var(--border)}
-.nav-inner{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
-.brand{display:flex;gap:12px;align-items:center;font-weight:800}
-.brand-badge{width:36px;height:36px;border-radius:10px;border:1px solid rgba(34,211,238,.3);
-display:grid;place-items:center;color:var(--accent);background:rgba(34,211,238,.1);
-font-family:'Space Grotesk',sans-serif}
-.nav-links{display:flex;gap:10px}
-.nav-links a{padding:8px 18px;border-radius:999px;font-weight:600;color:var(--muted)}
-.nav-links a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+    *{ box-sizing:border-box; }
+    html, body { scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(34,211,238,0.15), transparent 55%),
+        radial-gradient(900px 500px at 80% 0%, rgba(163,230,53,0.12), transparent 55%),
+        var(--bg);
+      overflow-x:hidden;
+    }
 
-/* HERO */
-.hero{padding:100px 0 80px;border-bottom:1px solid var(--border)}
-.hero-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:50px}
-.kicker{display:inline-flex;gap:8px;padding:8px 14px;border:1px solid var(--border);
-border-radius:999px;background:rgba(255,255,255,.04);color:var(--muted);
-font-size:.85rem;font-weight:600;margin-bottom:24px}
-.kicker::before{content:"";width:8px;height:8px;border-radius:50%;
-background:var(--accent);box-shadow:0 0 10px var(--accent)}
-h1{margin:0;font-size:clamp(2.8rem,6.5vw,4.8rem);line-height:1.05;font-weight:800}
-.subtitle{margin:28px 0 38px;color:var(--muted);max-width:60ch;line-height:1.7}
-.highlight-white{color:var(--text);font-weight:600}
-.highlight-accent{color:var(--accent);font-weight:600}
+    a{ color: inherit; text-decoration: none; transition: 0.3s; }
 
-/* BUTTONS */
-.btn-row{display:flex;gap:15px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;
-border-radius:999px;border:1px solid var(--border);
-background:rgba(255,255,255,.05);font-weight:700}
-.btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.1)}
-.btn.primary{border-color:var(--accent);background:rgba(34,211,238,.12)}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);
-box-shadow:0 0 8px var(--accent)}
+    .container{
+      width: min(var(--container), 90vw);
+      margin: 0 auto;
+    }
 
-/* CARDS */
-section{padding:120px 0;border-bottom:1px solid var(--border)}
-.card{background:rgba(255,255,255,.03);border:1px solid var(--border);
-border-radius:28px;padding:40px;margin-bottom:30px}
-.card:hover{border-color:rgba(34,211,238,.4)}
+    /* --- Navigation --- */
+    .nav{
+      position: sticky; top: 0; z-index: 999;
+      backdrop-filter: blur(12px);
+      background: rgba(11,18,32,0.6);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 16px 0;
+    }
+    .brand{ display:flex; align-items:center; gap: 12px; font-weight: 800; font-size: 1.1rem; }
+    .brand-badge{
+      width: 36px; height: 36px; border-radius: 10px;
+      border: 1px solid rgba(34,211,238,0.3);
+      background: rgba(34,211,238,0.1);
+      display:grid; place-items:center; color: var(--accent);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .nav-links{ display:flex; gap: 10px; }
+    .nav-links a{
+      padding: 8px 18px; border-radius: 999px;
+      font-size: 0.9rem; font-weight: 600; color: var(--muted);
+    }
+    .nav-links a:hover{ background: rgba(255,255,255,0.06); color: var(--text); }
 
-@media(max-width:960px){
-.hero-grid{grid-template-columns:1fr}
-.hero{padding:60px 0}
-}
-</style>
+    /* --- Hero Section --- */
+    .hero{ padding: 100px 0 80px; border-bottom: 1px solid var(--border); }
+    .hero-grid{ display:grid; grid-template-columns: 1.4fr 0.6fr; gap: 50px; align-items: center; }
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 14px; border: 1px solid var(--border);
+      border-radius: 999px; background: rgba(255,255,255,0.04);
+      color: var(--muted); font-size: 0.85rem; margin-bottom: 24px;
+      font-weight: 600;
+    }
+    .kicker::before{ content:""; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
+    
+    h1{
+      margin: 0; font-size: clamp(2.8rem, 6.5vw, 4.8rem);
+      letter-spacing: -0.04em; line-height: 1.05;
+      font-weight: 800;
+    }
+    .subtitle{
+      margin: 28px 0 38px; color: var(--muted);
+      line-height: 1.7; font-size: 1.15rem; max-width: 60ch;
+    }
+    .highlight-white { color: var(--text); font-weight: 600; }
+    .highlight-accent { color: var(--accent); font-weight: 600; }
+
+    /* --- Global Map --- */
+    .map-box{
+      margin-top: 50px; border-radius: var(--radius);
+      border: 1px solid var(--border); background: rgba(15, 26, 46, 0.4);
+      overflow:hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+    .map-inner{ padding: 30px; position: relative; }
+    .ping { animation: pulse 2.5s infinite; transform-origin: center; }
+    @keyframes pulse {
+      0% { r: 5; opacity: 0.8; }
+      100% { r: 20; opacity: 0; }
+    }
+    .line {
+      fill:none; stroke: var(--accent); stroke-width: 2.5;
+      stroke-dasharray: 1000; stroke-dashoffset: 1000;
+      animation: draw 5s ease-in-out infinite;
+      opacity: 0.7;
+    }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+
+    /* --- Buttons --- */
+    .btn-row{ display:flex; flex-wrap:wrap; gap: 15px; }
+    .btn{
+      display:inline-flex; align-items:center; gap: 10px;
+      padding: 14px 28px; border-radius: 999px;
+      border: 1px solid var(--border); background: rgba(255,255,255,0.05);
+      color: var(--text); font-weight: 700; transition: all 0.3s ease;
+    }
+    .btn:hover{ transform: translateY(-2px); background: rgba(255,255,255,0.1); }
+    .btn.primary{ border-color: var(--accent); background: rgba(34,211,238,0.12); }
+    .dot{ width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+
+    /* --- Experience & Section Titles --- */
+    section{ padding: 120px 0; border-bottom: 1px solid var(--border); }
+    .section-title h2{ font-size: 2.8rem; margin: 0 0 12px; letter-spacing: -0.03em; }
+    .section-title .meta{ color: var(--muted); margin-bottom: 50px; font-weight: 500; font-size: 1.05rem; }
+
+    .card{
+      background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+      border-radius: 28px; padding: 40px; margin-bottom: 30px;
+      transition: all 0.3s ease; position: relative;
+    }
+    .card:hover{ border-color: rgba(34,211,238,0.4); background: rgba(255,255,255,0.05); }
+
+    .exp-item{ display:grid; grid-template-columns: 320px 1fr; gap: 50px; }
+    .exp-media{ height: 220px; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); background: #000; }
+    .exp-media img{ width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: 0.5s; }
+    .card:hover .exp-media img{ opacity: 1; transform: scale(1.05); }
+
+    .big-number{
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 4rem; color: var(--accent); margin: 15px 0 0; line-height: 1;
+    }
+    .kpi-label { font-size: 0.85rem; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 8px; }
+
+    /* Outcome Pills */
+    ul { list-style: none; padding: 0; margin: 25px 0 0; }
+    li { margin-bottom: 18px; line-height: 1.7; display: flex; align-items: flex-start; font-size: 1.05rem; }
+    .pill-mini {
+      flex-shrink: 0;
+      font-size: 0.7rem; padding: 3px 10px; border-radius: 6px;
+      background: rgba(34,211,238,0.12); color: var(--accent);
+      font-weight: 800; margin-right: 14px; margin-top: 4px;
+      border: 1px solid rgba(34,211,238,0.25); text-transform: uppercase;
+    }
+
+    /* --- Education Specific --- */
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+    .edu-card h3 { margin: 0 0 10px; font-size: 1.5rem; }
+    .edu-card .degree { color: var(--accent2); font-weight: 700; margin-bottom: 15px; }
+
+    /* --- Tags --- */
+    .tag-container{ display:flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .tag{
+      padding: 7px 15px; border-radius: 999px; font-size: 0.85rem; font-weight: 600;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--muted);
+    }
+    .tag.accent{ color: var(--accent); border-color: rgba(34,211,238,0.3); }
+    .tag.accent2{ color: var(--accent2); border-color: rgba(163,230,53,0.3); }
+
+    @media (max-width: 960px){
+      .hero-grid, .exp-item, .edu-grid { grid-template-columns: 1fr; }
+      .hero{ padding: 60px 0; }
+    }
+  </style>
 </head>
 
 <body>
 
-<nav class="nav">
-<div class="container nav-inner">
-<div class="brand">
-<div class="brand-badge">JP</div>
-<span>Jeehyun Piao</span>
-</div>
-<div class="nav-links">
-<a href="#impact">Impact</a>
-<a href="#skills">Skills</a>
-<a href="#education">Education</a>
-<a href="#contact">Contact</a>
-</div>
-</div>
-</nav>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-badge">JP</div>
+        <span>Jeehyun Piao</span>
+      </div>
+      <div class="nav-links">
+        <a href="#impact">Impact</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-<header class="hero">
-<div class="container">
-<div class="hero-grid">
-<div data-aos="fade-up">
-<div class="kicker">Global · Data · Financial Sensitivity</div>
-<h1>Business Analyst &<br><span style="color:var(--accent2)">Delivery Lead</span></h1>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div data-aos="fade-up">
+          <div class="kicker">Global · Data · Financial Sensitivity</div>
+          <h1>Business Analyst & <br><span style="color:var(--accent2)">Delivery Lead</span></h1>
+          
+          <p class="subtitle">
+            <span class="highlight-white">Numbers are a universal language</span>, but their context varies across cultures. 
+            Combining <span class="highlight-accent">rigorous financial sensitivity</span> with 
+            <span style="color:var(--text); border-bottom: 2px solid var(--accent2);">trilingual mastery (KR/CN/EN/JP)</span>, 
+            I empower multinational enterprises to make data-driven decisions with precision.
+          </p>
 
-<p class="subtitle">
-<span class="highlight-white">Numbers are a universal language</span>, but their context varies across cultures.
-Combining <span class="highlight-accent">rigorous financial sensitivity</span> with
-<span style="border-bottom:2px solid var(--accent2)">trilingual mastery (KR/CN/EN/JP)</span>,
-I empower multinational enterprises to make data-driven decisions with precision.
-</p>
+          <div class="btn-row">
+            <a class="btn primary" href="mailto:jeehyunpiao@gmail.com"><span class="dot"></span>Contact Me</a>
+            <a class="btn" href="https://www.linkedin.com/in/zhixian-piao/" target="_blank">LinkedIn</a>
+          </div>
 
-<div class="btn-row">
-<a class="btn primary" href="mailto:jeehyunpiao@gmail.com"><span class="dot"></span>Contact Me</a>
-<a class="btn" href="https://www.linkedin.com/in/zhixian-piao/" target="_blank">LinkedIn</a>
-</div>
-</div>
+          <div class="map-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="map-inner">
+              <svg viewBox="0 0 800 280" style="width:100%; height:auto;">
+                <path d="M 650 180 Q 400 50 150 100" class="line" />
+                <circle cx="150" cy="100" r="8" fill="var(--accent)" />
+                <circle cx="150" cy="100" r="12" fill="var(--accent)" class="ping" />
+                <text x="110" y="80" font-size="24">🇳🇱</text>
+                <circle cx="650" cy="180" r="8" fill="var(--accent2)" />
+                <circle cx="650" cy="180" r="12" fill="var(--accent2)" class="ping" />
+                <text x="610" y="230" font-size="24">🇰🇷 🇨🇳 🇯🇵</text>
+                <text x="310" y="40" font-style="italic" fill="var(--muted)" font-size="15">Strategic Global Bridge: EU ↔ APAC</text>
+              </svg>
+            </div>
+          </div>
+        </div>
 
-<aside data-aos="fade-left">
-<div class="card">
-<h3>Focus Areas</h3>
-<p>Data Automation · BI Strategy · Global Delivery · Cross-cultural Communication</p>
-</div>
-</aside>
-</div>
-</div>
-</header>
+        <aside data-aos="fade-left" data-aos-delay="300">
+          <div class="card">
+            <h3 style="margin-top:0">Focus Areas</h3>
+            <div class="tag-container">
+              <span class="tag accent">Data Automation</span>
+              <span class="tag accent">BI Strategy</span>
+              <span class="tag">Stakeholder Alignment</span>
+              <span class="tag">Global Delivery</span>
+              <span class="tag accent2">Cross-cultural Communication</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
 
-<footer id="contact" style="padding:120px 0 60px;background:rgba(0,0,0,.3)">
-<div class="container" style="text-align:center">
-<h2 data-aos="fade-up">Let's build impact together.</h2>
-<a class="btn primary" href="mailto:jeehyunpiao@gmail.com">Get in Touch</a>
+  <section id="impact">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-aos="fade-right">Professional Impact</h2>
+        <p class="meta" data-aos="fade-right" data-aos-delay="100">Translating complex data into measurable business value</p>
+      </div>
 
-<div style="margin-top:80px;border-top:1px solid var(--border);padding-top:40px;
-display:flex;justify-content:space-between;flex-wrap:wrap">
-<div class="brand">
-<div class="brand-badge">JP</div>
-<span style="color:var(--muted)">© 2026 Jeehyun Piao</span>
-</div>
-<div class="nav-links">
-<a href="#impact">Impact</a>
-<a href="https://www.linkedin.com/in/zhixian-piao/" target="_blank">LinkedIn</a>
-</div>
-</div>
-</div>
-</footer>
+      <div class="card" data-aos="fade-up">
+        <div class="exp-item">
+          <div class="exp-left">
+            <div class="exp-media">
+              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="EY Analytics">
+            </div>
+            <div class="kpi-box">
+              <p class="big-number">€4M</p>
+              <p class="kpi-label">Cost Savings Identified</p>
+            </div>
+          </div>
+          <div class="exp-right">
+            <h3 style="margin:0; font-size: 1.8rem;">Business Analyst & Delivery Lead</h3>
+            <p style="color:var(--accent2); font-weight:700; margin: 10px 0;">EY Netherlands | 2025.02 – Present</p>
+            <ul>
+              <li><span class="pill-mini">Delivery</span> Leading end-to-end software delivery for global mobility platforms.</li>
+              <li><span class="pill-mini">Strategy</span> Identified €4M in potential savings via analytics & architecture optimization.</li>
+              <li><span class="pill-mini">Bridge</span> Translating ambiguous client needs into structured functional requirements.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-<script>
-AOS.init({duration:1000,once:true});
-</script>
+      <div class="card" data-aos="fade-up">
+        <div class="exp-item">
+          <div class="exp-left">
+            <div class="exp-media">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="BI Automation">
+            </div>
+            <div class="kpi-box">
+              <p class="big-number">100%</p>
+              <p class="kpi-label">Automation Transition</p>
+            </div>
+          </div>
+          <div class="exp-right">
+            <h3 style="margin:0; font-size: 1.8rem;">Data Analyst (BI Excellence)</h3>
+            <p style="color:var(--accent2); font-weight:700; margin: 10px 0;">Unilever | 2024.03 – 2024.09</p>
+            <ul>
+              <li><span class="pill-mini">BI Excellence</span> Transitioned manual reporting to a fully automated BI ecosystem.</li>
+              <li><span class="pill-mini">Integrity</span> Resolved 350+ data gaps, improving reporting reliability.</li>
+              <li><span class="pill-mini">Adoption</span> Standardized global KPI definitions and built intuitive dashboards.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section id="skills">
+    <div class="container">
+      <div class="section-title"><h2>Skill Engine</h2></div>
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:25px;">
+        <div class="card" data-aos="zoom-in">
+          <h3>Technical Stack</h3>
+          <div class="tag-container">
+            <span class="tag accent">SQL</span> <span class="tag accent">Python</span> <span class="tag">Azure SQL</span> 
+            <span class="tag">Microsoft Fabric</span> <span class="tag">Power BI</span> <span class="tag">Alteryx</span>
+          </div>
+        </div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="100">
+          <h3>Strategic Delivery</h3>
+          <div class="tag-container">
+            <span class="tag accent2">Stakeholder Alignment</span> <span class="tag accent2">UAT / Testing</span> 
+            <span class="tag">Requirements Engineering</span> <span class="tag">Change Management</span>
+          </div>
+        </div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="200">
+          <h3>Linguistic Mastery</h3>
+          <div class="tag-container">
+            <span class="tag accent">Korean</span> <span class="tag accent">Chinese</span> 
+            <span class="tag">English</span> <span class="tag">Japanese</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-aos="fade-right">Academic Credentials</h2>
+        <p class="meta" data-aos="fade-right" data-aos-delay="100">Foundations of precision, analytics, and cross-border communication</p>
+      </div>
+      <div class="edu-grid">
+        <div class="card edu-card" data-aos="fade-up">
+          <h3>Maastricht University 🇳🇱</h3>
+          <p class="degree">M.Sc. Business Intelligence & Smart Services</p>
+          <div class="tag-container">
+            <span class="tag accent">Cum Laude (Honor Degree)</span>
+            <span class="tag accent2">Beta Gamma Sigma (Top 10%)</span>
+          </div>
+        </div>
+        <div class="card edu-card" data-aos="fade-up" data-aos-delay="100">
+          <h3>Central University of Finance and Economics 🇨🇳</h3>
+          <p class="degree">B.Sc. English with Finance and Economics</p>
+          <p style="color:var(--muted); font-size: 0.95rem; line-height: 1.6;">
+            The dual foundation of financial data precision and high-level cross-border communication.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" style="padding: 120px 0 60px; background: rgba(0,0,0,0.3);">
+    <div class="container" style="text-align: center;">
+      <h2 style="font-size: 3rem; margin-bottom: 20px;" data-aos="fade-up">Let's build impact together.</h2>
+      <a class="btn primary" href="mailto:jeehyunpiao@gmail.com">Get in Touch</a>
+      <div style="margin-top:100px; padding-top: 40px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+        <div class="brand">
+          <div class="brand-badge">JP</div>
+          <span style="font-size: 0.9rem; color: var(--muted);">© 2026 Jeehyun Piao.</span>
+        </div>
+        <div class="nav-links">
+          <a href="#impact">Impact</a> 
+          <a href="https://www.linkedin.com/in/zhixian-piao/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 </body>
 </html>
